@@ -8,24 +8,30 @@
 
 <body>
     <h1>Music Player</h1>
-    <audio src="Sigma.mp3"></audio>
+    <audio src="Gojira – Silvera.mp3"></audio>
 
     <button class="play">Play</button>
-    <button class="pause">Pause</button>
+    
 
     <script>
         var player = document.querySelector('audio');
-        var startM = document.querySelector('.play');
-        var pauseM = document.querySelector('.pause');
-
-
-        startM.addEventListener('click', function () {
-            player.play();
-        });
-
-        pauseM.addEventListener('click', function () {
-            player.pause();
-        });
+        var btn = document.querySelector('.play');
+          var etat =  btn.innerHTML;
+          console.log(etat);
+              btn.addEventListener('click', function() {
+                if(btn.innerHTML == 'Pause' )
+                {
+                  player.pause()
+                  btn.innerHTML = 'Play';
+                  var etat =  btn.innerHTML;
+                  console.log(etat);
+              } else {
+                player.play();
+                btn.innerHTML = 'Pause';
+                var etat =  btn.innerHTML;
+                console.log(etat);
+              }
+              });
     </script>
 </body>
 
