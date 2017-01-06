@@ -3,22 +3,48 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Untitled Document</title>
+    <title>Player Audio</title>
 </head>
 
 <body>
     <h1>Music Player</h1>
-    <audio src="Gojira – Silvera.mp3"></audio>
+    <audio src=""></audio>
 
     <button class="play">Play</button>
-    
+    <button  class="next">Next</button>
+
 
     <script>
-        var player = document.querySelector('audio');
+    var chansons = {
+      "songs" : [
+        { "titre" : "Silvera",
+          "path" : "Gojira – Silvera.mp3"
+        },
+        { "titre" : "Not Our Tomorrow",
+          "path" : "Not Our Tomorrow.mp3"
+        }
+      ],
+      }
+        var i = 0;
+        var cur = chansons.songs[i].path;
+        console.log(cur);
+        var next = document.querySelector('.next');
         var btn = document.querySelector('.play');
-          var etat =  btn.innerHTML;
+        var etat =  btn.innerHTML;
+        var player = document.querySelector('audio');
+
+        player.src = cur;
+        console.log(player);
+        console.log(etat);
+
+        next.addEventListener('click', function elNext() {
+          i++;
+          cur = chansons.songs[i].path;
+          player.src = cur;
+          btn.innerHTML = 'Play';
           console.log(etat);
-              btn.addEventListener('click', function() {
+        })
+        btn.addEventListener('click', function() {
                 if(btn.innerHTML == 'Pause' )
                 {
                   player.pause()
