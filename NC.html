@@ -7,33 +7,46 @@
 </head>
 
 <body>
+  <div>
     <h1>Music Player</h1>
+    <h2></h2>
+    <h3></h3>
     <audio src=""></audio>
 
     <button class="play">Play</button>
     <button  class="next">Next</button>
+  </div>
 
 
     <script>
     var chansons = {
       "songs" : [
         { "titre" : "Silvera",
-          "path" : "Gojira – Silvera.mp3"
+          "path" : "Gojira – Silvera.mp3",
+          "artiste" : "Gojira"
         },
         { "titre" : "Not Our Tomorrow",
-          "path" : "Not Our Tomorrow.mp3"
+          "path" : "Not Our Tomorrow.mp3",
+          "artiste" : "Miss May I"
         }
       ],
       }
-        var i = 0;
-        var cur = chansons.songs[i].path;
-        console.log(cur);
+
         var next = document.querySelector('.next');
         var btn = document.querySelector('.play');
         var etat =  btn.innerHTML;
         var player = document.querySelector('audio');
+        var artiste = document.querySelector('h2');
+        var title = document.querySelector('h3');
 
-        player.src = cur;
+        var i = 0;
+        var cursong = chansons.songs[i].path;
+        var curtitle = chansons.songs[i].titre;
+        var curartiste = chansons.songs[i].artiste;
+
+        title.innerHTML = curtitle;
+        artiste.innerHTML = curartiste;
+        player.src = cursong;
         console.log(player);
         console.log(etat);
 
@@ -42,6 +55,10 @@
           cur = chansons.songs[i].path;
           player.src = cur;
           btn.innerHTML = 'Play';
+          curtitle = chansons.songs[i].titre;
+          title.innerHTML = curtitle;
+          curartiste = chansons.songs[i].artiste;
+          artiste.innerHTML = curartiste;
           console.log(etat);
         })
         btn.addEventListener('click', function() {
