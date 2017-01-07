@@ -4,92 +4,102 @@
 --------- PROPRIETES GENERALES --------
 --------------------------------------*/
 
+
 /* ----- Correction bug ---- */
 
-*
-{
-	margin: 0;
-	padding: 0;
+* {
+    margin: 0;
+    padding: 0;
 }
 
 *,
 *:before,
-*:after
-{
-	box-sizing: border-box;
+*:after {
+    box-sizing: border-box;
 }
-
 
 .clearfix:before,
-.clearfix:after
-{
-	content: " ";
-	display: table;
+.clearfix:after {
+    content: " ";
+    display: table;
 }
 
-.clearfix:after
-{
-	clear: both;
+.clearfix:after {
+    clear: both;
 }
 
-html
-{
-	font-size: 62.5%;
+html {
+    font-size: 62.5%;
 }
 
-body
-{
-	
-	font-family: 'Lato', serif;
+body {
+    font-family: 'Lato', serif;
     color: black;
-
 }
 
-img
-{
-	display: block;
+section {
+    float: left;
+    width: 50%;
+    padding: 50px;
 }
 
 
-.fond-barre
-{
-	width: 500px;
-	height: 50px;
-	margin: auto;
-	background: yellow;
-	margin-top: 200px;
+/* PART PLAYER */
+
+.wrapper {
+    background: red;
+    text-align: center;
 }
 
-.barre
-{
-	width: 0;
-	height: 50px;
-	background: blue;
+img {
+    display: block;
+    margin: 0 auto;
 }
 
-.barre img
-{
-	float: right;
-	width: 50px;
-	height: 50px;
+
+/* bloc barre progression */
+
+.fond-barre {
+    width: 500px;
+    height: 50px;
+    margin: auto;
+    background: yellow;
+    margin-top: 5x;
 }
+
+.barre {
+    width: 0;
+    height: 50px;
+    background: blue;
+}
+
+.barre img {
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+
+/* bloc volume */
 
 .container {
-	width: 100px;
-	height: 20px;
-	background-color: black;
-	margin: 100px auto;
+    width: 100px;
+    height: 20px;
+    background-color: black;
+    margin: 5px auto;
 }
 
 .volume-rect {
-	width: 0;
-	height: 20px;
-	background-color: pink;
+    width: 100px;
+    height: 20px;
+    background-color: pink;
 }
+
+
+/* PART LISTING MUSIC */
 
 .dispo {
-	border: 1px solid black;
-	float: right;
-	width: 500px;
+    background: orange;
+    float: right;
+    width: 500px;
 }
-
