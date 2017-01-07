@@ -46,6 +46,7 @@
 
  // récupère élément HTML
  var next = document.querySelector('.next');
+ var preview = document.querySelector('.preview');
  var btn = document.querySelector('.play');
  var btnStop = document.querySelector('.stop-it');
  // récupère les élément barre progression
@@ -95,7 +96,26 @@
      curgifA = chansons.songs[i].gifA;
      gif.src = curgifA;
 
- })
+ });
+
+ // PREVIEW
+ preview.addEventListener('click', function elNext() {
+
+     i--;
+     cur = chansons.songs[i].path;
+     player.src = cur;
+     btn.innerHTML = 'Play';
+     curtitle = chansons.songs[i].titre;
+     title.innerHTML = curtitle;
+     curartiste = chansons.songs[i].artiste;
+     artiste.innerHTML = curartiste;
+     curcover = chansons.songs[i].cover;
+     cover.src = curcover;
+     console.log(etat);
+
+ });
+
+
 
 
  // Affiche les titres disponibles
