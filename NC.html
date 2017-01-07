@@ -12,6 +12,7 @@
     <h2></h2>
     <h3></h3>
     <audio src=""></audio>
+    <img src="" width="400" height="400">
 
     <button class="play">Play</button>
     <button  class="next">Next</button>
@@ -23,11 +24,13 @@
       "songs" : [
         { "titre" : "Silvera",
           "path" : "Gojira – Silvera.mp3",
-          "artiste" : "Gojira"
+          "artiste" : "Gojira",
+          "cover" : "gojira.jpeg"
         },
         { "titre" : "Not Our Tomorrow",
           "path" : "Not Our Tomorrow.mp3",
-          "artiste" : "Miss May I"
+          "artiste" : "Miss May I",
+          "cover" : "missmayi.jpeg"
         }
       ],
       }
@@ -38,15 +41,19 @@
         var player = document.querySelector('audio');
         var artiste = document.querySelector('h2');
         var title = document.querySelector('h3');
+        var cover = document.querySelector('img');
 
         var i = 0;
         var cursong = chansons.songs[i].path;
         var curtitle = chansons.songs[i].titre;
         var curartiste = chansons.songs[i].artiste;
+        var curcover = chansons.songs[i].cover;
 
         title.innerHTML = curtitle;
         artiste.innerHTML = curartiste;
         player.src = cursong;
+        cover.src = curcover;
+
         console.log(player);
         console.log(etat);
 
@@ -59,6 +66,8 @@
           title.innerHTML = curtitle;
           curartiste = chansons.songs[i].artiste;
           artiste.innerHTML = curartiste;
+          curcover = chansons.songs[i].cover;
+          cover.src = curcover;
           console.log(etat);
         })
         btn.addEventListener('click', function() {
