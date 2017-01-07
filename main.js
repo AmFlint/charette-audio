@@ -48,7 +48,8 @@
  var next = document.querySelector('.next');
  var preview = document.querySelector('.preview');
  var btn = document.querySelector('.play');
- var btnStop = document.querySelector('.stop-it');
+ var btnStop = document.querySelector('.stop');
+ var rond_play = document.querySelector('.rond-play');
  // récupère les élément barre progression
  var fondBarre = document.querySelector('.fond-barre');
  var barre = document.querySelector('.barre');
@@ -61,7 +62,7 @@
  var player = document.querySelector('audio');
  var jeu = document.querySelector('h2');
  var title = document.querySelector('h3');
- var cover = document.querySelector('img');
+ var cover = document.querySelector('.coverimage');
  var gif = document.querySelector('.barre img')
 
  var i = 0;
@@ -91,7 +92,7 @@
      cur = chansons.songs[i].path;
      player.src = cur;
      player.play();
-     btn.innerHTML = 'Pause';
+     rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
      player.currentTime = 0;
      curtitle = chansons.songs[i].titre;
      title.innerHTML = curtitle;
@@ -114,7 +115,7 @@
       }     
      cur = chansons.songs[i].path;
      player.src = cur;
-     btn.innerHTML = 'Pause';
+     rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
      player.currentTime = 0;
      player.play();
      curtitle = chansons.songs[i].titre;
@@ -146,7 +147,7 @@
          player.src = changeM;
          player.currentTime = 0;
          player.play();
-         btn.innerHTML = 'Pause';
+         rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
          var changetitle = chansons.songs[id].titre;
          title.innerHTML = changetitle;
          var changejeu = chansons.songs[id].jeu;
@@ -161,13 +162,13 @@
 
  // FUNCTION PLAY / PAUSE
  btn.addEventListener('click', function () {
-     if (btn.innerHTML == 'Pause') {
+     if (rond_play.innerHTML == '<img src="img-content/pause.svg" alt="play" class="icone">') {
          player.pause()
-         btn.innerHTML = 'Play';
+         rond_play.innerHTML = '<img src="img-content/play.svg" alt="play" class="icone">';
          gif.src = chansons.songs[i].gifF;
      } else {
          player.play();
-         btn.innerHTML = 'Pause';
+         rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
          gif.src = chansons.songs[i].gifA;
          setInterval(function () {
              temps = player.currentTime;
@@ -183,15 +184,16 @@
  btnStop.addEventListener('click', function () {
      player.pause();
      player.currentTime = 0;
-     btn.innerHTML = 'Play';
+     gif.src = chansons.songs[i].gifF;
+     rond_play.innerHTML = '<img src="img-content/play.svg" alt="play" class="icone">';
  });
 
  // Barre de progression
  fondBarre.addEventListener('click', function (event) {
 
-     barre.style.width = event.offsetX / 500 * 100 + '%';
+     barre.style.width = event.offsetX / 1009 * 100 + '%';
 
-     player.currentTime = (event.offsetX / 500) * tempsTotal;
+     player.currentTime = (event.offsetX / 1009) * tempsTotal;
 
  });
 
