@@ -52,13 +52,17 @@ img.icone
 	height: auto;
 	margin: auto;
 	padding-top: 7px;
+	cursor: pointer;
 }
 
-img.precedent
+img.precedent, 
+img.suivant
 {
 	padding-top: 0;
 	max-width: 50%;
 }
+
+
 
 .fond
 {
