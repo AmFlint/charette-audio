@@ -28,7 +28,7 @@
          {
              "titre": "Overworld Theme",
              "jeu": "The legend of Zelda",
-             "path": "musiques/yoshi-theme.mp3",
+             "path": "musiques/zelda-theme.mp3",
              "cover": "img-content/zelda-cover.jpg",
              "gifA": "img-content/link.gif",
              "gifF": "img-content/linkfix.gif"
@@ -36,7 +36,7 @@
          {
              "titre": "Athletic theme",
              "jeu": "yoshi's island",
-             "path": "musiques/zelda-theme.mp3",
+             "path": "musiques/yoshi-theme.mp3",
              "cover": "img-content/yoshi-cover.jpg",
              "gifA": "img-content/yoshi.gif",
              "gifF": "img-content/yoshifix.gif"
@@ -172,8 +172,8 @@
 
  // FUNCTION STOP
  btnStop.addEventListener('click', function () {
-     player.currentTime = 0;
      player.pause();
+     player.currentTime = 0;
      btn.innerHTML = 'Play';
  });
 
