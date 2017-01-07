@@ -2,7 +2,7 @@
  var chansons = {
      "songs": [
          {
-             "titre": "Vempire Killer",
+             "titre": "Vampire Killer",
              "jeu": "Castlevania",
              "path": "musiques/castlevania-theme.mp3",
              "cover": "img-content/castlevania-cover.jpg",
@@ -72,6 +72,13 @@
  var curcover = chansons.songs[i].cover;
  var curgifF = chansons.songs[i].gifF;
  var curgifA = chansons.songs[i].gifA;
+ var entrance = document.querySelector('.gifEntrance');
+ var tout = document.querySelector('.tout');
+
+ setTimeout(function(){entrance.style.opacity = 0;},4500);
+ setTimeout(function(){entrance.style.display = "none"; tout.style.display = 'block' },5500)
+
+ var lislol = document.querySelectorAll(".dispo ul li");
 
  // affiche le titre, le nom du jeu, ajoute l'url pour l'audio et le lien pour l'image cover
  title.innerHTML = curtitle;
@@ -157,6 +164,11 @@
          var changegif = chansons.songs[id].gifA;
          gif.src = changegif;
          i = id;
+         for (var m = 0; m < lislol.length; m++) {
+             lislol[m].classList.remove("selected");   
+         }
+         this.classList.add("selected");
+
      });
 
 
@@ -196,6 +208,9 @@
      player.currentTime = (event.offsetX / 1009) * tempsTotal;
 
  });
+
+// CLasse toggle selected 
+
 
 
 
