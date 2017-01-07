@@ -87,6 +87,7 @@
      player.src = cur;
      player.play();
      btn.innerHTML = 'Pause';
+     player.currentTime = 0;
      curtitle = chansons.songs[i].titre;
      title.innerHTML = curtitle;
      curjeu = chansons.songs[i].jeu;
@@ -99,20 +100,22 @@
  });
 
  // PREVIEW
- preview.addEventListener('click', function elNext() {
+ preview.addEventListener('click', function elPrev() {
 
      i--;
      cur = chansons.songs[i].path;
      player.src = cur;
-     btn.innerHTML = 'Play';
+     btn.innerHTML = 'Pause';
+     player.currentTime = 0;
+     player.play();
      curtitle = chansons.songs[i].titre;
      title.innerHTML = curtitle;
-     curartiste = chansons.songs[i].artiste;
-     artiste.innerHTML = curartiste;
+     curjeu = chansons.songs[i].jeu;
+     jeu.innerHTML = curjeu;
      curcover = chansons.songs[i].cover;
      cover.src = curcover;
-     console.log(etat);
-
+     curgifA = chansons.songs[i].gifA;
+     gif.src = curgifA;
  });
 
 
