@@ -87,7 +87,7 @@
     }
     else {
       i++;
-    }     
+    }
      cur = chansons.songs[i].path;
      player.src = cur;
      player.play();
@@ -106,8 +106,12 @@
 
  // PREVIEW
  preview.addEventListener('click', function elPrev() {
-
-     i--;
+      if (i == 0) {
+        i = 4;
+      }
+      else {
+        i--;
+      }     
      cur = chansons.songs[i].path;
      player.src = cur;
      btn.innerHTML = 'Pause';
