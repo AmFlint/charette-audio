@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Progression</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	    <h1>Music Player</h1>
+    <audio src="Sigma.mp3" id="prout"></audio>
+
+    <button class="play">Play</button>
+    <button class="pause">Pause</button>
+	<div class="fond-barre">
+		<div class="barre clearfix"><img src="megamanfix.gif" alt=""></div>
+	</div>
+</body>
+<script>
+	var fondBarre = document.querySelector('.fond-barre');
+	var barre = document.querySelector('.barre');
+	var player = document.querySelector('audio');
+    var startM = document.querySelector('.play');
+    var pauseM = document.querySelector('.pause');
+    var temps;
+    var tempsTotal;
+    var temps_actuel;
+
+    
+     startM.addEventListener('click', function () {
+            player.play();
+            barre.innerHTML= '<img src="megaman.gif" alt="">';
+            setInterval(function() {
+           		temps = player.currentTime;
+    			tempsTotal = player.duration;
+   				temps_actuel = temps/tempsTotal*100;
+   				barre.style.width = temps_actuel + '%';
+            	}, 1000);
+        });
+
+        pauseM.addEventListener('click', function () {
+            player.pause();
+            barre.innerHTML= '<img src="megamanfix.gif" alt="">';
+
+        });
+
+	fondBarre.addEventListener('click', function (event) { 
+
+		barre.style.width = event.offsetX/500*100 + '%';
+
+		player.currentTime = (event.offsetX/500)*tempsTotal;
+
+		;
+
+
+	});
+	
+</script>
+</html>
