@@ -7,6 +7,7 @@
 </head>
 
 <body>
+
   <div>
     <h1>Music Player</h1>
     <h2></h2>
@@ -14,12 +15,15 @@
     <audio src=""></audio>
     <img src="" width="400" height="400">
 
-    <button class="play">Play</button>
-    <button  class="next">Next</button>
-  </div>
+        <button class="play">Play</button>
+        <button class="stop-it">Stop</button>
+        <button class="next">Next</button>
+    </div>
+
 
 
     <script>
+
     var chansons = {
       "songs" : [
         { "titre" : "Silvera",
@@ -31,13 +35,17 @@
           "path" : "Not Our Tomorrow.mp3",
           "artiste" : "Miss May I",
           "cover" : "missmayi.jpeg"
+
+        
         }
       ],
-      }
+        }
 
         var next = document.querySelector('.next');
         var btn = document.querySelector('.play');
-        var etat =  btn.innerHTML;
+        var btnStop = document.querySelector('.stop-it');
+
+        var etat = btn.innerHTML;
         var player = document.querySelector('audio');
         var artiste = document.querySelector('h2');
         var title = document.querySelector('h3');
@@ -57,7 +65,9 @@
         console.log(player);
         console.log(etat);
 
+        //NEXT
         next.addEventListener('click', function elNext() {
+
           i++;
           cur = chansons.songs[i].path;
           player.src = cur;
@@ -69,21 +79,30 @@
           curcover = chansons.songs[i].cover;
           cover.src = curcover;
           console.log(etat);
+
         })
-        btn.addEventListener('click', function() {
-                if(btn.innerHTML == 'Pause' )
-                {
-                  player.pause()
-                  btn.innerHTML = 'Play';
-                  var etat =  btn.innerHTML;
-                  console.log(etat);
-              } else {
+
+
+        // PLAY / PAUSE
+        btn.addEventListener('click', function () {
+            if (btn.innerHTML == 'Pause') {
+                player.pause()
+                btn.innerHTML = 'Play';
+                var etat = btn.innerHTML;
+                console.log(etat);
+            } else {
                 player.play();
                 btn.innerHTML = 'Pause';
-                var etat =  btn.innerHTML;
+                var etat = btn.innerHTML;
                 console.log(etat);
-              }
-              });
+            }
+        });
+        //STOP
+        btnStop.addEventListener('click', function () {
+            player.currentTime = 0;
+            player.pause();
+            btn.innerHTML = 'Play';
+        });
     </script>
 </body>
 
