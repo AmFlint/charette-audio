@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/*-------------------------------------
+--------- PROPRIETES GENERALES --------
+--------------------------------------*/
+
+/* ----- Correction bug ---- */
+
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*:before,
+*:after
+{
+	box-sizing: border-box;
+}
+
+
+.clearfix:before,
+.clearfix:after
+{
+	content: " ";
+	display: table;
+}
+
+.clearfix:after
+{
+	clear: both;
+}
+
+html
+{
+	font-size: 62.5%;
+}
+
+body
+{
+	
+	font-family: 'Lato', serif;
+    color: black;
+
+}
+
+img
+{
+	display: block;
+}
+
+
+.fond-barre
+{
+	width: 500px;
+	height: 50px;
+	margin: auto;
+	background: yellow;
+	margin-top: 200px;
+}
+
+.barre
+{
+	width: 0;
+	height: 50px;
+	background: blue;
+}
+
+.barre img
+{
+	float: right;
+	width: 50px;
+	height: 50px;
+}
+
+.container {
+	width: 100px;
+	height: 20px;
+	background-color: black;
+	margin: 100px auto;
+}
+
+.volume-rect {
+	width: 0;
+	height: 20px;
+	background-color: pink;
+}
+
+.dispo {
+	border: 1px solid black;
+	float: right;
+	width: 500px;
+}
+

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Player Audio</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 
 <body>
@@ -19,91 +20,22 @@
         <button class="stop-it">Stop</button>
         <button class="next">Next</button>
     </div>
-
-
-
-    <script>
-
-    var chansons = {
-      "songs" : [
-        { "titre" : "Silvera",
-          "path" : "Gojira – Silvera.mp3",
-          "artiste" : "Gojira",
-          "cover" : "gojira.jpeg"
-        },
-        { "titre" : "Not Our Tomorrow",
-          "path" : "Not Our Tomorrow.mp3",
-          "artiste" : "Miss May I",
-          "cover" : "missmayi.jpeg"
-
+    <div class="fond-barre">
+    <div class="barre clearfix"><img src="img-content/megamanfix.gif" alt=""></div>
+  </div>
+    <div class="container">
+      <div class="volume-rect">
         
-        }
-      ],
-        }
+      </div>
+    </div>
+    <div class="dispo">
+            Toutes les musiques dispo
+            <ul>
+            </ul>
+        </div>
 
-        var next = document.querySelector('.next');
-        var btn = document.querySelector('.play');
-        var btnStop = document.querySelector('.stop-it');
-
-        var etat = btn.innerHTML;
-        var player = document.querySelector('audio');
-        var artiste = document.querySelector('h2');
-        var title = document.querySelector('h3');
-        var cover = document.querySelector('img');
-
-        var i = 0;
-        var cursong = chansons.songs[i].path;
-        var curtitle = chansons.songs[i].titre;
-        var curartiste = chansons.songs[i].artiste;
-        var curcover = chansons.songs[i].cover;
-
-        title.innerHTML = curtitle;
-        artiste.innerHTML = curartiste;
-        player.src = cursong;
-        cover.src = curcover;
-
-        console.log(player);
-        console.log(etat);
-
-        //NEXT
-        next.addEventListener('click', function elNext() {
-
-          i++;
-          cur = chansons.songs[i].path;
-          player.src = cur;
-          btn.innerHTML = 'Play';
-          curtitle = chansons.songs[i].titre;
-          title.innerHTML = curtitle;
-          curartiste = chansons.songs[i].artiste;
-          artiste.innerHTML = curartiste;
-          curcover = chansons.songs[i].cover;
-          cover.src = curcover;
-          console.log(etat);
-
-        })
-
-
-        // PLAY / PAUSE
-        btn.addEventListener('click', function () {
-            if (btn.innerHTML == 'Pause') {
-                player.pause()
-                btn.innerHTML = 'Play';
-                var etat = btn.innerHTML;
-                console.log(etat);
-            } else {
-                player.play();
-                btn.innerHTML = 'Pause';
-                var etat = btn.innerHTML;
-                console.log(etat);
-            }
-        });
-        //STOP
-        btnStop.addEventListener('click', function () {
-            player.currentTime = 0;
-            player.pause();
-            btn.innerHTML = 'Play';
-        });
-    </script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>
