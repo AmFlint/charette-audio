@@ -32,11 +32,17 @@ html {
     font-size: 62.5%;
 }
 
+@font-face{
+    font-family: 'Pixeled';
+    src:url('../Pixeled.ttf');
+}
+
 body {
-    font-family: 'Lato', serif;
     color: black;
     background-color: #7bc2ff;
+    font-family: 'Pixeled';
 }
+
 
 img.icone
 {
@@ -155,35 +161,29 @@ img.suivant
 
 }
 
+h1{
+    text-align: center;
+    color: white;
+    font-size:30px;
+    margin-bottom: 50px;
+}
 section {
     float: left;
-    width: 30%;
-    font-size: 23px;
+    width: 50%;
+    font-size: 12px;
 }
 
 section h3 {
-    font-size: 20px;
+    font-size: 15px;
 }
 
 section img {
-    max-width: 70%;
+    width: 70%;
     height: auto;
     margin: 0 auto;
 }
 
-section:last-child {
-    float: right;
-}
 
-.bloc_tamere {
-    width: 1009px;
-    margin: 0 auto;
-}
-
-section:first-child {
-
-    width: 35%;
-}
 
 ul {
     list-style-type: none;
@@ -211,12 +211,16 @@ h2 {
     margin-bottom: 20px;
 }
 
-
+.box{
+    margin-bottom:50px;
+}
 /* PART PLAYER */
 
 .wrapper {
-    background: red;
+
     text-align: center;
+    width:500px;
+    float:right;
 }
 
 img {
@@ -224,6 +228,11 @@ img {
     margin: 0 auto;
 }
 
+footer{
+    height: 150px;
+    background-color:lightgreen;
+    margin-top:50px;
+}
 
 /* bloc barre progression */
 
@@ -279,7 +288,7 @@ padding-top: 175px;
 .volume-rect {
     width: 100px;
     height: 20px;
-    background-color: pink;
+    background-color: #808080;
 }
 
 
@@ -287,6 +296,7 @@ padding-top: 175px;
 
 .dispo {
     background: #dcdcdc;
-    float: right;
+    float: left;
     width: 400px;
+    margin-top: 100px;
 }
