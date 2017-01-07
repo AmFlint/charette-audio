@@ -270,6 +270,13 @@ padding-top: 175px;
 .gauche:hover .container {
     display: inline-block;
 }
+.tout {
+    display: none;
+}
+
+.gifEntrance {
+    transition: all 1s ease;
+}
 
 .gauche img {
     width: 60px;
