@@ -72,7 +72,7 @@
  var curgifF = chansons.songs[i].gifF;
  var curgifA = chansons.songs[i].gifA;
 
- // affiche le titre, le nom du jeu, ajoute l'url pour l'audio et le lien pour l'image cover             
+ // affiche le titre, le nom du jeu, ajoute l'url pour l'audio et le lien pour l'image cover
  title.innerHTML = curtitle;
  jeu.innerHTML = curjeu;
  player.src = cursong;
@@ -82,7 +82,12 @@
 
  // FUNCTION NEXT
  next.addEventListener('click', function elNext() {
-     i++;
+    if (i == 4) {
+      i = 0;
+    }
+    else {
+      i++;
+    }     
      cur = chansons.songs[i].path;
      player.src = cur;
      player.play();
