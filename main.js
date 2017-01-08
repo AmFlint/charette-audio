@@ -1,4 +1,4 @@
- // Affichage et Play pause next
+     // Affichage et Play pause next
  var chansons = {
      "songs": [
          {
@@ -74,69 +74,50 @@
  var curgifA = chansons.songs[i].gifA;
  var entrance = document.querySelector('.gifEntrance');
  var tout = document.querySelector('.tout');
+ var random = document.querySelector('.gauche img');
+ var hasard = 0;
 
- setTimeout(function(){entrance.style.opacity = 0;},4500);
- setTimeout(function(){entrance.style.display = "none"; tout.style.display = 'block' },5500)
-
- var lislol = document.querySelectorAll(".dispo ul li");
-
- // affiche le titre, le nom du jeu, ajoute l'url pour l'audio et le lien pour l'image cover
- title.innerHTML = curtitle;
- jeu.innerHTML = curjeu;
- player.src = cursong;
- cover.src = curcover;
- gif.src = curgifF;
+setTimeout(function(){entrance.style.opacity = 0;},4500);
+setTimeout(function(){entrance.style.display = "none"; tout.style.display = 'block' },5500);
 
 
- // FUNCTION NEXT
- next.addEventListener('click', function elNext() {
-    if (i == 4) {
-      i = 0;
+ function Play() {
+    player.play();
+    rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
+    gif.src = curgifA;
+    setInterval(function () {
+             temps = player.currentTime;
+             tempsTotal = player.duration;
+             temps_actuel = temps / tempsTotal * 100;
+             barre.style.width = temps_actuel + '%';
+         }, 1000);
+}
+
+function Pause() {
+    player.pause();
+         rond_play.innerHTML = '<img src="img-content/play.svg" alt="play" class="icone">';
+         gif.src = curgifF;
+}
+
+function changeInfos() {
+    cur = chansons.songs[i].path;
+    player.src = cur;
+    player.currentTime = 0;
+    curtitle = chansons.songs[i].titre;
+    title.innerHTML = curtitle;
+    curjeu = chansons.songs[i].jeu;
+    jeu.innerHTML = curjeu;
+    curcover = chansons.songs[i].cover;
+    cover.src = curcover;
+    curgifA = chansons.songs[i].gifA;
+    curgifF = chansons.songs[i].gifF;
+    gif.src = curgifA;
+    var lis = document.querySelectorAll('.dispo ul li');
+    for (var m = 0; m < lis.length; m++) {
+        lis[m].classList.remove('selected')
     }
-    else {
-      i++;
-    }
-     cur = chansons.songs[i].path;
-     player.src = cur;
-     player.play();
-     rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
-     player.currentTime = 0;
-     curtitle = chansons.songs[i].titre;
-     title.innerHTML = curtitle;
-     curjeu = chansons.songs[i].jeu;
-     jeu.innerHTML = curjeu;
-     curcover = chansons.songs[i].cover;
-     cover.src = curcover;
-     curgifA = chansons.songs[i].gifA;
-     gif.src = curgifA;
-
- });
-
- // PREVIEW
- preview.addEventListener('click', function elPrev() {
-      if (i == 0) {
-        i = 4;
-      }
-      else {
-        i--;
-      }     
-     cur = chansons.songs[i].path;
-     player.src = cur;
-     rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
-     player.currentTime = 0;
-     player.play();
-     curtitle = chansons.songs[i].titre;
-     title.innerHTML = curtitle;
-     curjeu = chansons.songs[i].jeu;
-     jeu.innerHTML = curjeu;
-     curcover = chansons.songs[i].cover;
-     cover.src = curcover;
-     curgifA = chansons.songs[i].gifA;
-     gif.src = curgifA;
- });
-
-
-
+    lis[i].classList.add('selected');
+}
 
  // Affiche les titres disponibles
  var tableau = document.querySelector('.dispo ul');
@@ -145,74 +126,82 @@
      tableau.innerHTML += tempo;
  };
 
+ // affiche le titre, le nom du jeu, ajoute l'url pour l'audio et le lien pour l'image cover
+ changeInfos();
+
+
+// FUNCTION RANDOM 
+
+random.addEventListener('click', function(){
+    hasard = Math.floor((Math.random() * 5));
+    while (i == hasard) {
+            // On relance la var random qui va chercher un entier entre 0 et 3
+            hasard = Math.floor((Math.random() * 5));
+        }
+        i = hasard;
+    changeInfos();
+    Play();
+});
+
+
+ // FUNCTION NEXT
+ next.addEventListener('click', function elNext() {
+    if (i == 4) {
+      i = 0;
+    } else {
+      i++;
+    }
+    changeInfos();
+    Play();
+ });
+
+ // PREVIEW
+ preview.addEventListener('click', function elPrev() {
+    if (i == 0) {
+        i = 4;
+    } else {
+        i--;
+    }  
+    changeInfos();   
+    Play();
+ });
+
  // récupère les li du tableau - événement de clique
  $('.dispo ul li').on(
      'click',
      function () {
-         var id = $(this).index();
-         var changeM = chansons.songs[id].path;
-         player.src = changeM;
-         player.currentTime = 0;
-         player.play();
-         rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
-         var changetitle = chansons.songs[id].titre;
-         title.innerHTML = changetitle;
-         var changejeu = chansons.songs[id].jeu;
-         jeu.innerHTML = changejeu;
-         var changecover = chansons.songs[id].cover;
-         cover.src = changecover;
-         var changegif = chansons.songs[id].gifA;
-         gif.src = changegif;
-         i = id;
-         for (var m = 0; m < lislol.length; m++) {
-             lislol[m].classList.remove("selected");   
-         }
-         this.classList.add("selected");
-
+        i = $(this).index();
+        changeInfos();
+        Play();
+        var lis = document.querySelectorAll('.dispo ul li');
      });
 
 
+
  // FUNCTION PLAY / PAUSE
- btn.addEventListener('click', function () {
-     if (rond_play.innerHTML == '<img src="img-content/pause.svg" alt="play" class="icone">') {
-         player.pause()
-         rond_play.innerHTML = '<img src="img-content/play.svg" alt="play" class="icone">';
-         gif.src = chansons.songs[i].gifF;
-     } else {
-         player.play();
-         rond_play.innerHTML = '<img src="img-content/pause.svg" alt="play" class="icone">';
-         gif.src = chansons.songs[i].gifA;
-         setInterval(function () {
-             temps = player.currentTime;
-             tempsTotal = player.duration;
-             temps_actuel = temps / tempsTotal * 100;
-             barre.style.width = temps_actuel + '%';
-         }, 1000);
-     }
- });
+btn.addEventListener('click', function () {
+    if (rond_play.innerHTML == '<img src="img-content/pause.svg" alt="play" class="icone">') {
+        Pause();
+    } else {
+        Play();
+    }
+});
 
 
- // FUNCTION STOP
- btnStop.addEventListener('click', function () {
-     player.pause();
-     player.currentTime = 0;
-     gif.src = chansons.songs[i].gifF;
-     rond_play.innerHTML = '<img src="img-content/play.svg" alt="play" class="icone">';
- });
+// FUNCTION STOP
+btnStop.addEventListener('click', function () {
+    Pause();
+    player.currentTime = 0;
+});
 
- // Barre de progression
- fondBarre.addEventListener('click', function (event) {
+// Barre de progression
+fondBarre.addEventListener('click', function (event) {
 
-     barre.style.width = event.offsetX / 1009 * 100 + '%';
+    barre.style.width = event.offsetX / 1009 * 100 + '%';
 
-     player.currentTime = (event.offsetX / 1009) * tempsTotal;
+    player.currentTime = (event.offsetX / 1009) * tempsTotal;
 
- });
-
-// CLasse toggle selected 
-
-
-
+});
 
  // GESTIONNAIRE DE VOLUME
  var container = document.querySelector(".container");

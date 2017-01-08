@@ -274,6 +274,7 @@ padding-top: 175px;
 
 .selected {
     background-color: #1a1a1a;
+    color: #fff;
 }
 
 .gauche:hover .container {
