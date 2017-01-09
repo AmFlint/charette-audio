@@ -100,8 +100,7 @@ function Pause() {
 }
 
 function changeInfos() {
-    cur = chansons.songs[i].path;
-    player.src = cur;
+    player.src = chansons.songs[i].path;
     player.currentTime = 0;
     curtitle = chansons.songs[i].titre;
     title.innerHTML = curtitle;
@@ -130,10 +129,10 @@ function changeInfos() {
  changeInfos();
 
 
-// FUNCTION RANDOM 
+// FUNCTION RANDOM
 
 random.addEventListener('click', function(){
-    hasard = Math.floor((Math.random() * 5));
+    hasard = Math.floor((Math.random() * 5)); // ?
     while (i == hasard) {
             // On relance la var random qui va chercher un entier entre 0 et 3
             hasard = Math.floor((Math.random() * 5));
@@ -161,8 +160,8 @@ random.addEventListener('click', function(){
         i = 4;
     } else {
         i--;
-    }  
-    changeInfos();   
+    }
+    changeInfos();
     Play();
  });
 
@@ -192,6 +191,7 @@ btn.addEventListener('click', function () {
 btnStop.addEventListener('click', function () {
     Pause();
     player.currentTime = 0;
+    i = 0;
 });
 
 // Barre de progression

@@ -55,7 +55,7 @@ img.icone
     cursor: pointer;
 }
 
-img.precedent, 
+img.precedent,
 img.suivant
 {
     padding-top: 0;
@@ -180,6 +180,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
 
 }
 
+.rond-play:hover {
+  
+}
+
 h1{
     text-align: center;
     color: white;
@@ -287,7 +291,7 @@ footer{
 }
 
 .gauche {
-padding-top: 175px; 
+padding-top: 175px;
 
 }
 
