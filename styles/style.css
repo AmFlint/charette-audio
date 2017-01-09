@@ -316,7 +316,7 @@ padding-top: 175px;
 }
 
 .gifEntrance {
-    /*transition: all 1s ease;*/
+    transition: all 1s ease;
 }
 
 .gauche img {

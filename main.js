@@ -76,6 +76,7 @@
  var tout = document.querySelector('.tout');
  var random = document.querySelector('.gauche img');
  var hasard = 0;
+ var ison;
 
 setTimeout(function(){entrance.style.opacity = 0;},4500);
 setTimeout(function(){entrance.style.display = "none"; tout.style.display = 'block' },5500);
@@ -221,16 +222,14 @@ fondBarre.addEventListener('click', function (event) {
 
  // FONCTION MUTE
  var mute = document.querySelector('.mute');
- var ison = player.volume;
-
-
+ 
   mute.addEventListener('click', function () {
-    console.log("Hello");
-    if (player.volume == 1) {
-      player.volume = 0;
+    if (player.volume !== 0) {
+    ison = player.volume;
+    player.volume = 0;
+    volumeUp.style.width = 0 + "px";
+    } else  {
+      player.volume = ison;
+      volumeUp.style.width = ison*100 + "px";
     }
-    else if (player.volume == 0) {
-      player.volume = 1;
-    }
-
   });
