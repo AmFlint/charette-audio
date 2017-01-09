@@ -55,7 +55,7 @@ img.icone
     cursor: pointer;
 }
 
-img.precedent, 
+img.precedent,
 img.suivant
 {
     padding-top: 0;
@@ -159,6 +159,10 @@ img.suivant
     border-radius: 100%;
     margin-top: 5px;
 
+}
+
+.rond-play:hover {
+  
 }
 
 h1{
@@ -268,7 +272,7 @@ footer{
 }
 
 .gauche {
-padding-top: 175px; 
+padding-top: 175px;
 
 }
 
