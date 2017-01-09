@@ -83,6 +83,9 @@ img.suivant
 {
     width: 30%;
 }
+.gauche img {
+  cursor: pointer;
+}
 
 .milieu
 {
@@ -137,7 +140,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', end
 .prev-btn:focus,
 .prev-btn:active,
 .next-btn:active,
-.next-btn:focus 
+.next-btn:focus
 {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a1a1a+0,1a1a1a+74,e8e8e8+100 */
 background: rgb(26,26,26); /* Old browsers */
@@ -151,6 +154,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
 .droite
 {
     width: 40%;
+}
+
+.mute {
+  color: #eee;
+  cursor: pointer;
 }
 
 .play, .stop
@@ -181,7 +189,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
 }
 
 .rond-play:hover {
-  
+
 }
 
 h1{
@@ -308,7 +316,7 @@ padding-top: 175px;
 }
 
 .gifEntrance {
-    transition: all 1s ease;
+    /*transition: all 1s ease;*/
 }
 
 .gauche img {

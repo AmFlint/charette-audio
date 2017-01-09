@@ -218,3 +218,19 @@ fondBarre.addEventListener('click', function (event) {
      volumeUp.style.width = width + "px";
      player.volume = width / 100;
  });
+
+ // FONCTION MUTE
+ var mute = document.querySelector('.mute');
+ var ison = player.volume;
+
+
+  mute.addEventListener('click', function () {
+    console.log("Hello");
+    if (player.volume == 1) {
+      player.volume = 0;
+    }
+    else if (player.volume == 0) {
+      player.volume = 1;
+    }
+
+  });
