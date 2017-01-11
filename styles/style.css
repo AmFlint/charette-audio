@@ -4,8 +4,10 @@
 --------- PROPRIETES GENERALES --------
 --------------------------------------*/
 
-
-/* ----- Correction bug ---- */
+@font-face {
+    font-family: 'Pixeled';
+    src: url('../Pixeled.ttf');
+}
 
 * {
     margin: 0;
@@ -32,20 +34,200 @@ html {
     font-size: 62.5%;
 }
 
-@font-face{
-    font-family: 'Pixeled';
-    src:url('../Pixeled.ttf');
-}
-
 body {
     color: black;
     background-color: #7bc2ff;
     font-family: 'Pixeled';
 }
 
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin: 10px 0 50px 0;
+}
 
-img.icone
-{
+
+/* première ligne, image et titre jeu */
+
+.box {
+    margin: 0 auto 50px;
+    width: 80%;
+}
+
+section {
+    width: 50%;
+    float: left;
+}
+
+section img {
+    width: 55%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.wrapper {
+    text-align: center;
+    width: 500px;
+    float: right;
+}
+
+section h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    margin: 10px;
+}
+
+section h3 {
+    font-size: 20px;
+    text-transform: lowercase;
+    margin: 10px;
+}
+
+
+/* le payer */
+
+main {
+    float: left;
+    width: 65%;
+    padding-right: 5px;
+}
+
+
+/* bloc barre progression */
+
+.fond-barre {
+    width: 100%;
+    height: 50px;
+    margin: auto;
+    border: 2px solid #808080;
+    background-color: #1a1a1a;
+}
+
+.barre {
+    width: 0;
+    height: 50px;
+    background-color: #808080;
+}
+
+.barre img {
+    float: right;
+    width: 50px;
+    height: 50px;
+}
+
+.fond {
+    width: 100%;
+    margin: auto;
+    background: #1a1a1a;
+    border: solid #dcdcdc 17px;
+}
+
+.gauche,
+.milieu,
+.droite {
+    float: left;
+    width: 30%;
+}
+
+
+/* partie gauche player */
+
+.random {
+    height: 75px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.gauche img {
+    cursor: pointer;
+}
+
+
+/* bloc volume */
+
+.container {
+    width: 100px;
+    height: 20px;
+    background-color: black;
+    display: none;
+    vertical-align: middle;
+}
+
+.volume-rect {
+    width: 100px;
+    height: 20px;
+    background-color: #808080;
+}
+
+
+/* partie milieu player */
+
+.bloc-gris {
+    width: 100%;
+    background: #808080;
+    height: 30px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.fond-prevnext {
+    width: 100%;
+    background: #dcdcdc;
+    padding-top: 5px;
+    height: 90px;
+    border-radius: 8px;
+}
+
+.int-prevnext {
+    width: 93%;
+    margin: auto;
+    border-radius: 8px;
+    border: 4px solid #808080;
+    height: 80px;
+}
+
+.prev-btn,
+.next-btn {
+    width: 40%;
+    height: 50px;
+    border-radius: 30px;
+    border: #000000 solid 3px;
+    float: left;
+    margin: 14px 5% 0 5%;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,1a1a1a+26,1a1a1a+100 */
+    background: rgb(232, 232, 232);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(232, 232, 232, 1) 0%, rgba(26, 26, 26, 1) 26%, rgba(26, 26, 26, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(232, 232, 232, 1) 0%, rgba(26, 26, 26, 1) 26%, rgba(26, 26, 26, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(232, 232, 232, 1) 0%, rgba(26, 26, 26, 1) 26%, rgba(26, 26, 26, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#1a1a1a', GradientType=0);
+    /* IE6-9 */
+}
+
+.prev-btn:focus,
+.prev-btn:active,
+.next-btn:active,
+.next-btn:focus {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a1a1a+0,1a1a1a+74,e8e8e8+100 */
+    background: rgb(26, 26, 26);
+    /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 1) 74%, rgba(232, 232, 232, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 1) 74%, rgba(232, 232, 232, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 1) 0%, rgba(26, 26, 26, 1) 74%, rgba(232, 232, 232, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#e8e8e8', GradientType=0);
+    /* IE6-9 */
+}
+
+img.icone {
     display: block;
     max-width: 70%;
     width: auto;
@@ -56,165 +238,50 @@ img.icone
 }
 
 img.precedent,
-img.suivant
-{
+img.suivant {
     padding-top: 0;
     max-width: 50%;
 }
 
 
+/* partie droite player */
 
-.fond
-{
-    width: 70%;
-    zheight: 350px;
-    margin: auto;
-    background: #1a1a1a;
-    border: solid #dcdcdc 30px;
-}
-
-.gauche,.milieu,.droite
-{
-    float: left;
-    height: 290px;
-}
-
-.gauche
-{
-    width: 30%;
-}
-.gauche img {
-  cursor: pointer;
-}
-
-.milieu
-{
-    width: 30%;
-}
-
-.bloc-gris
-{
-    width: 100%;
-    background: #808080;
-    height: 40px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-
-.fond-prevnext
-{
-    width: 100%;
-    background: #dcdcdc;
-    padding-top: 5px;
-    height: 90px;
-    border-radius: 8px;
-}
-
-.int-prevnext
-{
-    width: 93%;
-    margin: auto;
-    border-radius: 8px;
-    border: 4px solid #808080;
-    height: 80px;
-}
-
-.prev-btn, .next-btn
-{
-    width: 40%;
-    height: 50px;
-    border-radius: 30px;
-    border:#000000 solid 3px;
-    float: left;
-    margin: 14px 5% 0 5%;
-    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e8e8e8+0,1a1a1a+26,1a1a1a+100 */
-background: rgb(232,232,232); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(232,232,232,1) 0%, rgba(26,26,26,1) 26%, rgba(26,26,26,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(232,232,232,1) 0%,rgba(26,26,26,1) 26%,rgba(26,26,26,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(232,232,232,1) 0%,rgba(26,26,26,1) 26%,rgba(26,26,26,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8e8e8', endColorstr='#1a1a1a',GradientType=0 ); /* IE6-9 */
-
-}
-
-.prev-btn:focus,
-.prev-btn:active,
-.next-btn:active,
-.next-btn:focus
-{
-/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1a1a1a+0,1a1a1a+74,e8e8e8+100 */
-background: rgb(26,26,26); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(26,26,26,1) 0%, rgba(26,26,26,1) 74%, rgba(232,232,232,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top,  rgba(26,26,26,1) 0%,rgba(26,26,26,1) 74%,rgba(232,232,232,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom,  rgba(26,26,26,1) 0%,rgba(26,26,26,1) 74%,rgba(232,232,232,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#e8e8e8',GradientType=0 ); /* IE6-9 */
-
-}
-
-.droite
-{
+.droite {
     width: 40%;
 }
 
 .mute {
-  color: #eee;
-  cursor: pointer;
+    color: #eee;
+    cursor: pointer;
 }
 
-.play, .stop
-{
+.play,
+.stop {
     width: 36%;
     float: left;
     margin-right: 10px;
     background: #dcdcdc;
     height: 100px;
     border-radius: 3px;
-    margin-top: 140px;
+    margin-top: 110px;
 }
 
-.play
-{
+
+.play {
     margin-left: 20px;
 }
 
-.rond-play, .rond-stop
-{
+.rond-play,
+.rond-stop {
     width: 75%;
     height: 90px;
-    margin: auto;
+    margin: 5px auto 0;
     background: #ff0000;
     border-radius: 100%;
-    margin-top: 5px;
-
+    padding-top: 10px;
 }
 
-.rond-play:hover {
-
-}
-
-h1{
-    text-align: center;
-    color: white;
-    font-size:30px;
-    margin-bottom: 50px;
-}
-section {
-    float: left;
-    width: 50%;
-    font-size: 12px;
-}
-
-section h3 {
-    font-size: 15px;
-}
-
-section img {
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-}
-
-
+.rond-play:hover {}
 
 ul {
     list-style-type: none;
@@ -234,73 +301,18 @@ li:last-child {
     margin-bottom: 0;
 }
 
-h2 {
-    text-align: center;
+
+/* liste des musiques player */
+
+.dispo {
+    background: #dcdcdc;
+    float: right;
+    width: 35%;
 }
 
 .dispo h2 {
     margin-bottom: 20px;
-}
-
-.box{
-    margin-bottom:50px;
-}
-/* PART PLAYER */
-
-.wrapper {
-
     text-align: center;
-    width:500px;
-    float:right;
-}
-
-img {
-    display: block;
-    margin: 0 auto;
-}
-
-footer{
-    height: 150px;
-    background-color:lightgreen;
-    margin-top:50px;
-}
-
-/* bloc barre progression */
-
-.fond-barre {
-    width: 1009px;
-    height: 50px;
-    margin: auto;
-    border: 2px solid #808080;
-    background-color: #1a1a1a;
-}
-
-.barre {
-    width: 0;
-    height: 50px;
-    background-color: #808080;
-}
-
-.barre img {
-    float: right;
-    width: 50px;
-    height: 50px;
-}
-
-
-/* bloc volume */
-
-.container {
-    width: 100px;
-    height: 20px;
-    background-color: black;
-    display: none;
-    vertical-align: middle;
-}
-
-.gauche {
-padding-top: 175px;
-
 }
 
 .selected {
@@ -311,6 +323,7 @@ padding-top: 175px;
 .gauche:hover .container {
     display: inline-block;
 }
+
 .tout {
     display: none;
 }
@@ -319,23 +332,12 @@ padding-top: 175px;
     transition: all 1s ease;
 }
 
+.gifEntrance img {
+    display: block;
+    margin: 0 auto;
+}
+
 .gauche img {
     width: 60px;
     display: inline-block;
-}
-
-.volume-rect {
-    width: 100px;
-    height: 20px;
-    background-color: #808080;
-}
-
-
-/* PART LISTING MUSIC */
-
-.dispo {
-    background: #dcdcdc;
-    float: left;
-    width: 400px;
-    margin-top: 100px;
 }
