@@ -74,7 +74,7 @@
  var curgifA = chansons.songs[i].gifA;
  var entrance = document.querySelector('.gifEntrance');
  var tout = document.querySelector('.tout');
- var random = document.querySelector('.gauche img');
+ var random = document.querySelector('.random');
  var hasard = 0;
  var ison;
 
