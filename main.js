@@ -111,7 +111,7 @@ function changeInfos() {
     cover.src = curcover;
     curgifA = chansons.songs[i].gifA;
     curgifF = chansons.songs[i].gifF;
-    gif.src = curgifA;
+    gif.src = curgifF;
     var lis = document.querySelectorAll('.dispo ul li');
     for (var m = 0; m < lis.length; m++) {
         lis[m].classList.remove('selected')
