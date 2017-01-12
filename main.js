@@ -77,6 +77,7 @@
  var random = document.querySelector('.random');
  var hasard = 0;
  var ison;
+ var fondbarre_width = .65*(.8*window.innerWidth);
 
 setTimeout(function(){entrance.style.opacity = 0;},4500);
 setTimeout(function(){entrance.style.display = "none"; tout.style.display = 'block' },5500);
@@ -207,9 +208,11 @@ btnStop.addEventListener('click', function () {
 // Barre de progression
 fondBarre.addEventListener('click', function (event) {
 
-    barre.style.width = event.offsetX / 1009 * 100 + '%';
+    fondbarre_width = .65 * (.8 * window.innerWidth);
 
-    player.currentTime = (event.offsetX / 1009) * tempsTotal;
+    barre.style.width = event.offsetX / fondbarre_width * 100 + '%';
+
+    player.currentTime = (event.offsetX / fondbarre_width) * tempsTotal;
 
 });
 
