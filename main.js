@@ -188,6 +188,15 @@ btn.addEventListener('click', function () {
 });
 
 
+document.addEventListener('keypress', function() {
+    if (event.keyCode == 32 && player.paused == true) {
+        Play();
+    } else if (event.keyCode == 32 && player.paused == false) {
+        Pause();
+    }
+});
+
+
 // FUNCTION STOP
 btnStop.addEventListener('click', function () {
     Pause();
