@@ -139,6 +139,7 @@ main {
     height: 75px;
     margin-bottom: 30px;
     cursor: pointer;
+    color: #fff;
 }
 
 .gauche img {

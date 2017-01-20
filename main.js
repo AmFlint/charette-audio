@@ -194,7 +194,9 @@ document.addEventListener('keypress', function() {
         Play();
     } else if (event.keyCode == 32 && player.paused == false) {
         Pause();
-    }
+    } 
+
+    
 });
 
 
