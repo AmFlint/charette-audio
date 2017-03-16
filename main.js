@@ -137,7 +137,22 @@ random.addEventListener('click', function(){
     hasard = Math.floor((Math.random() * 5)); // ?
     while (i == hasard) {
             // On relance la var random qui va chercher un entier entre 0 et 3
-            hasard = Math.floor((Math.random() * 5));
+            // hasard = Math.floor((Math.random() * 5));  0 <= hasard <= 4 
+            hasard = Math.floor((Math.random() * 4)); // 0 <= hasard <= 3
+         
+         /*
+         Math.random()
+         Returns a Number value with positive sign, greater than or equal to 0 but
+         less than 1, chosen randomly or pseudo randomly with approximately uniform
+         distribution over that range, using an implementation-dependent algorithm
+         or strategy. 
+         
+         Uniform distribution :
+         A uniform distribution, sometimes also known as a rectangular distribution,
+         is a distribution that has constant probability. The probability density
+         function and cumulative distribution function for a continuous uniform
+         distribution on the interval are.
+         */
         }
         i = hasard;
     changeInfos();
@@ -146,7 +161,7 @@ random.addEventListener('click', function(){
 
 
  // FUNCTION NEXT
- next.addEventListener('click', function elNext() {
+ next.addEventListener('click', function elNext() { // why named function ?
     if (i == 4) {
       i = 0;
     } else {
@@ -157,7 +172,7 @@ random.addEventListener('click', function(){
  });
 
  // PREVIEW
- preview.addEventListener('click', function elPrev() {
+ preview.addEventListener('click', function elPrev() { // why named function ?
     if (i == 0) {
         i = 4;
     } else {
@@ -241,7 +256,8 @@ fondBarre.addEventListener('click', function (event) {
     if (player.volume !== 0) {
     ison = player.volume;
     player.volume = 0;
-    volumeUp.style.width = 0 + "px";
+    // volumeUp.style.width = 0 + "px"; 0 + "px" = "0px"
+    volumeUp.style.width = "0px";
     } else  {
       player.volume = ison;
       volumeUp.style.width = ison*100 + "px";
